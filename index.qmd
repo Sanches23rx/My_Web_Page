@@ -4,6 +4,6 @@ title: "web_page"
 
 # Приветствую на веб-странице!
 
-#### Для перехода к статье о PHDays перейти можно [сюда](https://sanches23rx.github.io/My_Web_Page/about.html) или найти в меню сверху
+#### Для просмотра статьи о PHDays перейти можно [сюда](https://sanches23rx.github.io/My_Web_Page/about.html) или найти в меню сверху
 
-#### Для дополнительной информации и другому перейти на [страницу](https://sanches23rx.github.io/My_Web_Page/dop.html) или найти в меню сверху
+#### Для дополнительной информации перейти на [эту](https://sanches23rx.github.io/My_Web_Page/dop.html) страницу или найти в меню сверху

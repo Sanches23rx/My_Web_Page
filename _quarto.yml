@@ -9,6 +9,7 @@ website:
       - href: index.qmd
         text: sanches23rx
       - about.qmd
+      - dop.qmd
 
 format:
   html:

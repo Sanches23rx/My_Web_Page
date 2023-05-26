@@ -7,12 +7,12 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: sanches23rx
       - about.qmd
 
 format:
   html:
-    theme: vapor
+    theme: lux
     css: styles.css
     toc: true
 

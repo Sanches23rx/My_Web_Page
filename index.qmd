@@ -2,6 +2,6 @@
 title: "Web"
 ---
 
-This is a Quarto website.
+[This is a Quarto website.](https://quarto.org/docs/websites)
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

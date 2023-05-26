@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "PHDays 2023"
 ---
 
 About this site

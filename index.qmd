@@ -1,5 +1,5 @@
 ---
-title: "Web"
+title: "web_page"
 ---
 
 [This is a Quarto website.](https://quarto.org/docs/websites)

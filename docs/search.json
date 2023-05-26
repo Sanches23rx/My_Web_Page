@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "web_page",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Приветствую на веб-странице!\n\nДля перехода к статье о PHDays перейти можно сюда или найти в меню сверху\n\n\nДля дополнительной информации и другому перейти на страницу или найти в меню сверху"
   },
   {
     "objectID": "about.html",
@@ -16,7 +16,7 @@
   {
     "objectID": "dop.html",
     "href": "dop.html",
-    "title": "New",
+    "title": "Other",
     "section": "",
     "text": "Дополнительная новая страница"
   }

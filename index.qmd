@@ -2,6 +2,8 @@
 title: "web_page"
 ---
 
-[This is a Quarto website.](https://quarto.org/docs/websites)
+# Приветствую на веб-странице!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+#### Для перехода к статье о PHDays перейти можно [сюда](https://sanches23rx.github.io/My_Web_Page/about.html) или найти в меню сверху
+
+#### Для дополнительной информации и другому перейти на [страницу](https://sanches23rx.github.io/My_Web_Page/dop.html) или найти в меню сверху

@@ -12,7 +12,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: vapor
     css: styles.css
     toc: true
 

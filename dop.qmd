@@ -1,5 +1,249 @@
 ---
 title: "MyProg"
+author: "Александр Рудзик БИСО-03-20"
+format: 
+    html:
+        code-fold: true
+        code-summary: "Show the code"
+toc: true
+number-sections: true
+jupyter: python3
 ---
 
-Дополнительная новая страница
+
+## Контрольное домашнее задание №1
+
+```{python}
+from prettytable import PrettyTable
+mytable = PrettyTable()
+mytable.field_names = ["Состояние 1", "Состояние 2", "Состояние 3", "Состояние 4"]
+mytable.add_row([10, 6, 3, 2])
+mytable.add_row([10, 5, 4, 8])
+mytable.add_row([7, 7, 2, 3])
+mytable.add_row([3, 8, 6, 5])
+mytable.add_row([3, 10, 6, 4])
+mytable.add_row([9, 6, 12, 8])
+mytable.add_row([6, 8, 7, 16])
+mytable.add_row([12, 9, 7, 14])
+
+print("Исходная матрица")
+print(mytable)
+```
+
+### Критерий Вальда
+
+```{python}
+
+a = [[10, 6, 3, 2], [10, 5, 4, 8], [7, 7, 2, 3], [3, 8, 6, 5], [3, 10, 6, 4], [9, 6, 12, 8], [6, 8, 7, 16], [12, 9, 7, 14]]
+min =[0]*8
+w=[0]*5
+z=0
+
+print('Наихудшие результаты эффективности по каждой строке:')
+for i in range(8):
+    min[i] = a[i][0]
+    for j in range(4):
+        if (a[i][j]< min[i]) :
+            min[i] = a[i][j]
+            j=j+1
+    print('x[',i+1,']=',min[i])
+    i=i+1
+max=min[0]
+for i in range (8):
+    if max< min[i]:
+        max=min[i]
+        k1=i+1
+    i=i+1
+print ('Наилучший показатель из ранее выбранных a[',k1,']=',max)
+print('Оптимальным проектом по критерию Вальда является проект №',k1)
+w[z]=k1
+z=z+1
+
+
+```
+
+### Критерий Сэвиджа
+
+```{python}
+R=[[0]*4]*8
+b=[0]*4 
+i=0
+j=0
+print('Максимальный показатель по каждому столбцу в исходной матрице:')
+for i in range(4):
+    b[i] = a[0][i]
+    for j in range(8):
+        if (a[j][i] > b[i]):
+            b[i] = a[j][i]
+            j = j+1
+    print('z[',i+1,']=',b[i])
+    i=i+1
+#max=min[0]
+i=0
+j=0
+print('В соответствие с формулой составим матрицу сожалений:')
+```
+
+![](photo3.jpg){width=300}
+
+```{python}
+print('Матрица сожалений - R:')
+
+maxi =[0]*8
+for i in range(8):
+    maxi[i]=0
+    for j in range(4):
+        R[i][j]=b[j]-a[i][j] 
+        print(R[i][j], end=' ')
+        if (maxi[i]<R[i][j]):
+            maxi[i]=R[i][j]
+    print()
+print('\nМаксимальный показатель по каждой строке в матрице R:')    
+for k in range (8):
+    print('b[',k+1,']=',maxi[k])
+min1=maxi[0]
+for i in range (8):
+    if min1> maxi[i]:
+        min1=maxi[i]
+        k2=i+1
+    i=i+1
+print ('\nМинимальный показатель из ранее выбранных b[', k2,']=',min1)
+print('Оптимальным проектом по критерию Сэвиджа является проект №',k2)
+w[z]=k2
+z=z+1
+```
+
+### Критерий Гурвица
+
+```{python}
+y=0.6
+i=0
+j=0
+max2 =[0]*8
+min2 =[0]*8
+g =([0]*8)
+for i in range(8):
+    max2[i]=a[i][0]
+    min2[i]=a[i][0]
+    for j in range(4):
+        if (max2[i]<a[i][j]):
+            max2[i]=a[i][j]
+        if(min2[i]>a[i][j]):
+            min2[i]=a[i][j]
+    g[i]=y*min2[i]+(1-y)*max2[i]
+print('Минимальные элементы по каждой строке:')
+for t in range(8):
+    print('a[',t+1,']=',min2[t])
+print('\nМаксимальные элементы по каждой строке:')
+for r in range(8):
+    print('a[',r+1,']=',max2[r])
+print('\nОпределение усредненного выигрыша:')    
+for i in range (8):
+    print('g[',i+1,']=',round(g[i],1))
+max3=g[0]
+for i in range (8):
+    if max3< g[i]:
+        max3=g[i]
+        k3=i+1
+    i=i+1
+print ('\nМаксимальный элемент из ранее выбранных g[', k3,']=',max3)
+print('Оптимальным проектом по критерию Гурвица является проект №',k3)
+w[z]=k3
+z=z+1
+
+```
+
+### Критерий Байеса
+
+
+```{python}
+p=[0.1,0.4,0.4,0.1]
+d =([0]*8)
+print('Вычисление значений в соответсвие с формулой:')
+```
+
+![](photo1.jpg){width=300}
+
+```{python}
+#вставить фото формулы
+for i in range(8):
+    for j in range(4):
+        d[i]=d[i]+a[i][j]*p[j]
+    print('q*[',i+1,']=', round(d[i],1))
+max4=d[0]
+for i in range (8):
+    if max4< d[i]:
+        max4=d[i]
+        k4=i+1
+    i=i+1
+print ('\nМаксимальный элемент из ранее выбранных q*[', k4,']=',round(max4,1))
+print('Оптимальным проектом по критерию Гурвица является проект №',k4)
+w[z]=k4
+z=z+1
+```
+
+### Критерий Лапласа
+
+```{python}
+print('Вычисление значений в соответсвие с формулой:')
+```
+
+![](photo2.jpg){width=300}
+```{python}
+n=4
+f =([0]*8)
+for i in range(8):
+    for j in range(4):
+        f[i]=f[i]+a[i][j]*(1/n)
+    print('f[',i+1,']=', round(f[i],2))
+max5=f[0]
+for i in range (8):
+    if max5< f[i]:
+        max5=f[i]
+        k5=i+1
+    i=i+1
+print ('\nМаксимальный элемент из ранее выбранных f[', k5,']=',round(max5,2))
+print('Оптимальным проектом по критерию Лапласа является проект №',k5)
+w[z]=k5
+```
+
+### Матрица голосования
+
+```{python}
+t=[[0]*5]*8
+x=[0]*8
+for i in range(8):
+    print('Проект №', i+1, ':')
+    for j in range (5):
+        if (i==w[j]-1):
+            print ('+', end=' ')
+            x[i]=x[i]+1
+        else:
+            print ('-', end=' ')
+    print (x[i])
+    print()
+max6=x[0]
+for i in range (8):
+    if max6<x[i]:
+        max6=x[i]
+        kg=i+1
+print ('Оптимальное решение №', kg, '\n')
+
+matr = PrettyTable()
+matr.field_names = ["Номер", "Вальд", "Сэвидж", "Гурвиц", "Байес", "Лаплас", "Результат"]
+matr.add_row([1, '-', '-', '-', '-', '-', 0])
+matr.add_row([2, '-', '-', '-', '-', '-', 0])
+matr.add_row([3, '-', '-', '-', '-', '-', 0])
+matr.add_row([4, '-', '-', '-', '-', '-', 0])
+matr.add_row([5, '-', '-', '-', '-', '-', 0])
+matr.add_row([6, '-', '-', '-', '-', '-', 0])
+matr.add_row([7, '-', '-', '+', '-', '-', 1])
+matr.add_row([8, '+', '+', '-', '+', '+', 4])
+
+
+print(matr)
+
+#matr.add_row([1, ])
+#atr.add_row([10, 5, 4, 8])
+
+```

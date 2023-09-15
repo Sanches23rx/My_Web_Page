@@ -1,9 +1,5 @@
 ---
 title: "MyProg"
-author: "Александр Рудзик БИСО-03-20"
-toc: true
-number-sections: true
-jupyter: python3
 ---
 
 

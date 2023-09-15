@@ -1,10 +1,6 @@
 ---
 title: "MyProg"
 author: "Александр Рудзик БИСО-03-20"
-format: 
-    html:
-        code-fold: true
-        code-summary: "Show the code"
 toc: true
 number-sections: true
 jupyter: python3
